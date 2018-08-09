@@ -1,0 +1,46 @@
+//- thanks @nauvalazhar https://github.com/nauvalazhar/my-login
+doctype html
+html
+  include includes/header
+  body.my-login-page
+    section.h-100
+      .container.h-100
+        .row.justify-content-md-center.h-100
+          .card-wrapper
+            .brand
+              img(src="/public/img/bootstrap.svg")
+            .card.fat
+              .card-body
+                h4.card-title.text-center Register
+                #infoText    marks the required field
+                form.mt-2(method="POST")
+                  .form-group
+                    label.requiredLabel(for="username") Username 
+                    input#username.form-control(type="text" name="username" value="" placeholder="e.g. david0316" maxlength="128" autocomplete="off" required autofocus)
+                  .form-group
+                    label(for="email") Email Address
+                    input#email.form-control(type="email" name="email" value="" placeholder="e.g. stefanie23@gmail.com" maxlength="128" autocomplete="off")
+                  .form-group
+                    label(for="firstname") First Name
+                    input#firstname.form-control(type="text" name="firstname" value="" placeholder="e.g. Kevin" maxlength="64" autocomplete="off")
+                  .form-group
+                    label(for="lastname") Last Name
+                    input#lastname.form-control(type="text" name="lastname" value="" placeholder="e.g. Bacon" maxlength="64" autocomplete="off")
+                  .form-group
+                    label.requiredLabel(for="password") Password 
+                    input#password.form-control(type="password" name="password" value="" maxlength="128" autocomplete="off" required)
+                  .form-group
+                    label.requiredLabel(for="reconfirmpassword") Reconfirm Password 
+                    input#reconfirmpassword.form-control(type="password" value="" maxlength="128" autocomplete="off" required)
+                  .form-group
+                    label
+                      //- input(type="checkbox" name="aggree" value="1")
+                      input(type="checkbox")
+                      |  I agree to the Terms and Conditions
+                  .form-group.no-margin
+                    button.btn.btn-primary.btn-block(type="submit")
+                      | Register
+                  .margin-top20.text-center
+                    | Already have an account? 
+                    a(href="/") Login
+            include includes/footer

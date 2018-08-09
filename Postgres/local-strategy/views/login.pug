@@ -1,0 +1,35 @@
+//- thanks @nauvalazhar https://github.com/nauvalazhar/my-login
+doctype html
+html
+  include includes/header
+  body.my-login-page
+    section.h-100
+      .container.h-100
+        .row.justify-content-md-center.h-100
+          .card-wrapper
+            .brand
+              img(src="public/img/bootstrap.svg")
+            .card.fat
+              .card-body
+                h4.card-title.text-center Login
+                form(method="POST")
+                  .form-group
+                    label(for="username") Username
+                    input#username.form-control(type="text" name="username" value="" maxlength="128" autocomplete="username" required autofocus)
+                  .form-group
+                    label(for="password")
+                      | Password
+                      //- a.float-right(href="forgot.html")
+                      //-   | Forgot Password?
+                    input#password.form-control(type="password" name="password" value="" maxlength="128" autocomplete="current-password" required)
+                  .form-group
+                    label
+                      input(type="checkbox" name="remember")
+                      |  Remember Me
+                  .form-group.mt-4
+                    button.btn.btn-primary.btn-block(type="submit")
+                      | Login
+                  .margin-top20.text-center
+                    | Don"t have an account? 
+                    a(href="/signup") Create One
+            include includes/footer
